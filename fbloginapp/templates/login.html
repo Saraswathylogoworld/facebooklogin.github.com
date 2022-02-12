@@ -1,0 +1,72 @@
+{% extends 'template.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+       
+  <div class="main">
+     
+     <div class="main-left">
+        
+        <p class="facebook-logo">facebook</p>
+        
+        <p class="facebook-status">Facebook helps you connect and share with the people in your life.</p>
+         
+     </div>
+     
+     <div class="main-right">
+            <form action="{% url 'adlogin' %}" method="post">
+            {% csrf_token %}
+             <div class="main-right-login">
+            
+                <div class="main-right-email">
+                  
+                  <input type="email" name="email" aria-required="true" placeholder="Email address or phone number">
+              
+                </div>
+               
+                <div class="main-right-password">
+                  
+                  <input type="password" aria-required="true" name="pswd" placeholder="Password">
+                  
+                </div>
+              
+                <div class="main-right-button">
+                  
+                  <button>
+                    Log In
+                  </button>
+                  
+                </div>
+            </form> 
+            <p>{{msg}}</p>   
+              
+              <div class="main-right-link">
+                  
+                  <a href="#">Forgotten account?</a>
+                  
+              </div>
+              
+              <div class="main-right-line">
+                  
+              </div>
+              
+              <div class="main-right-account">
+                  
+                <button> <a href="{% url 'index' %}" id="signup-account">Create New Account</a></button> 
+                  
+              </div>
+              
+              <div class="main-right-page-link">
+            
+                <a href="#">create a Page </a><p>for a celebrity, band or business.</p>
+            
+              </div>
+              
+     </div> 
+  </div>
+      
+</div>
+  
+  
+{% endblock %}
